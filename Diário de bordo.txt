@@ -1,0 +1,14 @@
+1 - Foi criada uma pasta para o projeto, no caso:
+2 - Utilizando o Visual Studio Code, adicionamos um novo arquivo .yaml
+3 - Adicionamos o texto no arquivo .yaml no próprio Visual Code e salvamos
+4 - (Opcional) Executei o software Docker Desktop
+5 - abri o GIT BASH na pasta do projeto que se encontra o arquivo .yaml (também poderia acessar pelo power shell)
+6 - executei o comando:
+	kubectl apply -f \portal-noticias.yaml
+esse comando instala esse pod apartir de um diretório da Alura (de onde faço esse curso)
+
+7 - Utilizei o seguinte comando para visualizar a isntalação desse pod:
+	kubectl get pods --watch
+
+8 - Por fim foi executad o comando abaixo para ver a descrição do pod 
+	kubectl describe pod portal-noticias
