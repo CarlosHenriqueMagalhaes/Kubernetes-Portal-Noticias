@@ -39,3 +39,24 @@ kubectl apply -f \podAserAtualizado
 5 - adicionado o NodePort  em svc-pod-1, após rodar no power shell consigo acessar no
  navegador do windows em locahost:30000 (que foi a porta que escolhemos)
 
+6 - Sobre LoadBalancer: è um closterIP que permite a comunicação entre uma maquina do
+mundo externo com nossos pods, se integrando automaticamente ao LoadBalancer do provedor
+(aws, google cloud ou Azure)
+
+7 - Nessa etapa foi criado (no caso no cluster do google cloud) o cluster identico ao
+pod-1.yaml (no "site" google cloud plataform)
+
+8 - após criado foi usado o apply
+9 - Criado svc-pod-1-LoadBalancer.yaml no Visual Code
+10 - Criado o mesmo serviço LoadBalancer no google cloud e apply 
+
+---------------------------------O que vimos até aqui--------------------------------------------
+
+O que são e para que servem os Services
+Como garantir estabilidade de IP e DNS
+Como criar um Service
+Labels são responsáveis por definir a relação Service x Pod
+Um ClusterIP funciona apenas dentro do cluster
+Um NodePort expõe Pods para dentro e fora do cluster
+Um LoadBalancer também é um NodePort e ClusterIP
+Um LoadBalancer é capaz de automaticamente utilizar um balanceador de carga de um cloud provider
