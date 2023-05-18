@@ -7,8 +7,18 @@
 	kubectl apply -f \portal-noticias.yaml
 esse comando instala esse pod apartir de um diretório da Alura (de onde faço esse curso)
 
-7 - Utilizei o seguinte comando para visualizar a isntalação desse pod:
+7 - Utilizei o seguinte comando para visualizar a instalação desse pod:
 	kubectl get pods --watch
 
-8 - Por fim foi executad o comando abaixo para ver a descrição do pod 
+8 - Por fim foi executado o comando abaixo para ver a descrição do pod 
 	kubectl describe pod portal-noticias
+-------------------------------------PARTE 2--------------------------------------------
+1 - Foi criado no Visual Code o pod-1 e o pod-2 apontando para o container criado no googlecloud
+(por ser um serviço que possa ser taxado não foi criado, mas o campo image especifica isso)
+
+2 - Foi criado o arquivo svc-pod para a comunicação com o pod-2
+3 - Adicionado Labels para a conexão de pos-2 e svc-pod-2
+4 - Adicionado o campo Port que será onde o svc ira ouvir (lembrando que não é bidirecional)
+o targetPort garante a comunicação para o pod-2
+
+
