@@ -1,8 +1,12 @@
+Guia passo a passo do projeto:----------------------------------------------------------
+-------------------------------------PARTE 1--------------------------------------------
 1 - Foi criada uma pasta para o projeto, no caso:
 2 - Utilizando o Visual Studio Code, adicionamos um novo arquivo .yaml
 3 - Adicionamos o texto no arquivo .yaml no próprio Visual Code e salvamos
 4 - (Opcional) Executei o software Docker Desktop
-5 - abri o GIT BASH na pasta do projeto que se encontra o arquivo .yaml (também poderia acessar pelo power shell)
+5 - abri o GIT BASH na pasta do projeto que se encontra o arquivo .yaml (também poderia
+ acessar pelo power shell)
+
 6 - executei o comando:
 	kubectl apply -f \portal-noticias.yaml
 esse comando instala esse pod apartir de um diretório da Alura (de onde faço esse curso)
@@ -13,12 +17,25 @@ esse comando instala esse pod apartir de um diretório da Alura (de onde faço e
 8 - Por fim foi executado o comando abaixo para ver a descrição do pod 
 	kubectl describe pod portal-noticias
 -------------------------------------PARTE 2--------------------------------------------
-1 - Foi criado no Visual Code o pod-1 e o pod-2 apontando para o container criado no googlecloud
-(por ser um serviço que possa ser taxado não foi criado, mas o campo image especifica isso)
+1 - Foi criado no Visual Code o pod-1 e o pod-2 apontando para o container criado no
+ googlecloud (por ser um serviço que possa ser taxado não foi criado, mas o campo image 
+ especifica isso)
 
 2 - Foi criado o arquivo svc-pod para a comunicação com o pod-2
 3 - Adicionado Labels para a conexão de pos-2 e svc-pod-2
 4 - Adicionado o campo Port que será onde o svc ira ouvir (lembrando que não é bidirecional)
 o targetPort garante a comunicação para o pod-2
+-------------------------------------PARTE 3--------------------------------------------
+1 - Conforme as imagens parte 3 da pasta imagens, definimos a criação de outro svc para
+que o pod-1 possa ser acessado externamente
 
+2 - criado svc-pod-1. O node port também ira funcionar como cluster IP
+3 - alterado pod-1 (sempre que alterarmos os pods ou svcs, devemos no windows power shell
+ ou no git bash executar o comando abaixo para atualizar as mudanças)
+
+kubectl apply -f \podAserAtualizado
+
+4 - kubectl get svc exibe todos os svcs rodando
+5 - adicionado o NodePort  em svc-pod-1, após rodar no power shell consigo acessar no
+ navegador do windows em locahost:30000 (que foi a porta que escolhemos)
 
