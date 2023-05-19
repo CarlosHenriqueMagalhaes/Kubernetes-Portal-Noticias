@@ -1,9 +1,22 @@
-Verificar quais pods e svcs estão rodando:
+Verificar quais pods, svcs e configmaps estão rodando:
 
 kubectl get pods
 kubectl get svc
+kubectl get configmap
 ----------------------------------------------------------
-Criar os pods e svcs do projeto:
+Descrever (mostrar os pod, svcs e configmaps em detalhes):
+
+kubectl describe pod portal-noticias
+kubectl describe pod sistema-noticias
+kubectl describe pod db-noticias
+
+kubectl describe svc svc-portal-noticias
+kubectl describe svc svc-sistema-noticias
+kubectl describe svc svc-db-noticias
+
+kubectl describe configmap dp-configmap
+----------------------------------------------------------
+Criar os pods, svcs e configmaps do projeto:
 
 kubectl apply -f \portal-noticias.yaml
 kubectl apply -f \sistema-noticias.yaml
@@ -12,6 +25,8 @@ kubectl apply -f \db-noticias.yaml
 kubectl apply -f \svc-portal-noticias.yaml
 kubectl apply -f \svc-sistema-noticias.yaml
 kubectl apply -f \svc-db-noticias.yaml
+
+kubectl apply -f \db-configmap.yaml
 ----------------------------------------------------------
 deletar pod:
 
