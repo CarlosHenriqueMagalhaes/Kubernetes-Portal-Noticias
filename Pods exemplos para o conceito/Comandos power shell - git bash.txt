@@ -1,5 +1,9 @@
+Verificar quais pods e svcs estão rodando:
+
 kubectl get pods
 kubectl get svc
+----------------------------------------------------------
+Criar os pods e svcs do projeto:
 
 kubectl apply -f \portal-noticias.yaml
 kubectl apply -f \sistema-noticias.yaml
@@ -8,5 +12,22 @@ kubectl apply -f \db-noticias.yaml
 kubectl apply -f \svc-portal-noticias.yaml
 kubectl apply -f \svc-sistema-noticias.yaml
 kubectl apply -f \svc-db-noticias.yaml
+----------------------------------------------------------
+deletar pod:
 
+kubectl delete pod db-noticias
+----------------------------------------------------------
+acessar de modo interativo do db-noticias:
 
+kubectl exec -it db-noticias -- bash (comando exibido na Alura não funcionou para mim)
+mysql -u root -p
+
+Enter password:
+q1w2e3r4
+
+show databases;
+use empresa;
+show tables;
+select * from usuario;
+# exit
+----------------------------------------------------------
