@@ -47,3 +47,15 @@ show tables;
 select * from usuario;
 # exit
 ----------------------------------------------------------
+replicasets:
+
+kubectl get replicasets (mostra os replicasets criados)
+----------------------------------------------------------
+deployment:
+
+kubectl apply -f \nginx-deployment.yaml --record (cria um deployment)
+kubectl annotate deployment nginx-deployment kubernets.io/change-cause= "Definindo a imagem com versão: latest" (anota o deployment com um flag para saber qual é qual)
+
+kubectl rollout history deployment nginx-deployment (exibe o historico dos deployments criados)
+
+kubectl rollout undo deployment <nginx-deployment> --to-revision=<1> (volta para a versão desejada)
